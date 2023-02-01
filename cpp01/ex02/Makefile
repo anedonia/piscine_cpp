@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/19 18:50:17 by ldevy             #+#    #+#              #
-#    Updated: 2023/01/19 19:16:01 by ldevy            ###   ########.fr        #
+#    Created: 2023/01/19 20:17:34 by ldevy             #+#    #+#              #
+#    Updated: 2023/01/19 20:18:04 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= zombie
+NAME 	= brain
 
 RM		= rm -rf
 
 CC		= c++
 
-SRCS	=  $(addprefix srcs/, main.cpp \
-			$(addprefix zombies/, newZombie.cpp randomChump.cpp Zombie.cpp))
+SRCS	=  main.cpp
+
 OBJS	= $(SRCS:%.cpp=%.o)
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 -I includes

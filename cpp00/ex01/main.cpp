@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:56:33 by ldevy             #+#    #+#             */
-/*   Updated: 2023/01/18 18:52:50 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/01 16:12:47 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int main(void)
 	{
 		std::cout << "Please enter a command :" << std::endl;
 		getline(std::cin, param);
-		if (param == "ADD" || param == "SEARCH")
-			display(param, &rep);
-		else if (param == "EXIT")
+		if (std::cin.eof() || param == "EXIT")
 			run = false;
+		else if (param == "ADD" || param == "SEARCH")
+			display(param, &rep);
 		else 
 			std::cout << "The valid arguments are -ADD- -SEARCH- or -EXIT-" << std::endl;
 	}

@@ -18,6 +18,9 @@
 class Contact
 {
 	public:
+		Contact();
+		~Contact();
+		
 		std::string get_fname(void) const;
 		bool set_f_name(std::string fn);
 

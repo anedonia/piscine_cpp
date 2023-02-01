@@ -6,11 +6,21 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 19:40:19 by ldevy             #+#    #+#             */
-/*   Updated: 2023/01/18 18:03:58 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/01 15:16:18 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes.hpp"
+
+Contact::Contact()
+{
+	return;
+}
+
+Contact::~Contact()
+{
+	return;
+}
 
 std::string Contact::get_fname(void) const
 {

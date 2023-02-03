@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:35:00 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/03 14:40:55 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/03 17:43:37 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fixed
 private:
 
 	int	_nb;
-	static const int _raw;
+	static const int _raw = 8;
 	
 public:
 	Fixed(void);

@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:35:02 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/06 20:45:23 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/07 15:54:50 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,97 @@ std::ostream& operator<<(std::ostream& o, const Fixed& fixed)
 {
 	o << fixed.toFloat();
 	return o;
+}
+
+//op comp
+bool Fixed::operator>(Fixed const  & rhs)
+{
+	return(this->_nb > rhs._nb);
+}
+
+bool Fixed::operator<(Fixed const  & rhs)
+{
+	return(this->_nb < rhs._nb);
+}
+
+bool Fixed::operator>=(Fixed const  & rhs)
+{
+	return(this->_nb >= rhs._nb);
+}
+
+bool Fixed::operator<=(Fixed const  & rhs)
+{
+	return(this->_nb <= rhs._nb);
+}
+
+bool Fixed::operator==(Fixed const  & rhs)
+{
+	return(this->_nb == rhs._nb);
+}
+
+bool Fixed::operator!=(Fixed const  & rhs)
+{
+	return(this->_nb != rhs._nb);
+}
+
+//op math
+Fixed Fixed::operator+(Fixed const & rhs)
+{
+	Fixed tmp;
+	
+	tmp.setRawBits(this->_nb + rhs._nb);
+	return(tmp);
+}
+
+Fixed Fixed::operator-(Fixed const & rhs)
+{
+	Fixed tmp;
+	
+	tmp.setRawBits(this->_nb - rhs._nb);
+	return(tmp);
+}
+
+Fixed Fixed::operator*(Fixed const & rhs)
+{
+	Fixed tmp;
+	
+	tmp.setRawBits(this->_nb * rhs._nb);//a changer verif le res
+	return(tmp);
+}
+
+Fixed Fixed::operator/(Fixed const & rhs)
+{
+	Fixed tmp;
+	
+	tmp.setRawBits(this->_nb / rhs._nb);//a changer verif le res
+	return(tmp);	
+}
+
+//op incre
+Fixed & Fixed::operator++(void)
+{
+	this->_nb++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp;
+	tmp = *this;
+	this->_nb++;
+	return tmp;
+}
+
+Fixed & Fixed::operator--(void)
+{
+	this->_nb--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp;
+	tmp = *this;
+	this->_nb--;
+	return tmp;
 }

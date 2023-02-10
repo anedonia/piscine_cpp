@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:15:02 by ldevy             #+#    #+#             */
-/*   Updated: 2023/01/22 18:34:36 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/09 13:13:12 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void	Harl::complain(std::string level)
 	};
 	if (level == "ALL")
 	{
-		for (int i; i < 4; i++)
+		for (int i = 0; i < 4; i++)
 			(this->*p[i])();
 		return;
 	}
-	for (int i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
 			(this->*p[i])();

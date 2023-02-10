@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 16:42:25 by ldevy             #+#    #+#             */
-/*   Updated: 2023/01/21 18:42:46 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/09 13:09:43 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(int argc, char **argv)
 	filename = argv[1];
 	s1 = argv[2];
 	s2 = argv[3];
+	if (s1.empty())
+		return (0);
 	std::ifstream in_file(filename.data());
 	if (in_file.bad())
 	{
@@ -50,6 +52,7 @@ int	main(int argc, char **argv)
 			{
 				line.erase(pos, s1.length());
 				line.insert(pos, s2);
+				pos += s2.length();
 				pos = line.find(s1, pos);
 			}
 			out_file << line;

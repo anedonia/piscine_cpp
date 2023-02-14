@@ -6,7 +6,7 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/02/13 18:33:30 by ldevy            ###   ########.fr        #
+#    Updated: 2023/02/14 15:18:09 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ RM		= rm -rf
 
 CC		= c++
 
-SRCS	=  main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS	= $(addprefix srcs/, main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp) #WrongAnimal.cpp WrongCat.cpp
 
-INC		= Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+INC		= $(addprefix includes/, includes.hpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp) #WrongAnimal.hpp WrongCat.hpp
 
 OBJS	= $(SRCS:%.cpp=%.o)
 
@@ -37,7 +37,6 @@ clean:
 fclean: clean		
 	${RM} ${NAME}
 
-re:	fclean 
-	all
+re:		fclean all
 
-.PHONY: all fclean clean re 	
+.PHONY: all fclean clean re 

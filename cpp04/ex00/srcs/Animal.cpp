@@ -6,15 +6,20 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:35:18 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/13 18:55:58 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/14 14:07:20 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../includes/includes.hpp"
 
 Animal::Animal()
 {
 	std::cout << "Animal : default constructor" << std::endl;
+}
+
+Animal::Animal(std::string type):_type(type)
+{
+	std::cout << "Animal : type " + type + " constructor" << std::endl;
 }
 
 Animal::~Animal()
@@ -34,12 +39,12 @@ Animal & Animal::operator=(const Animal & inst)
 	return *this;
 }
 
-std::string Animal::getType()
+std::string Animal::getType() const
 {
 	return _type;
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
 	std::cout << "Animal : sound" << std::endl;
 }

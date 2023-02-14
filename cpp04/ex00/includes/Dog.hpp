@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 18:34:17 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/13 18:34:43 by ldevy            ###   ########.fr       */
+/*   Created: 2023/02/14 13:13:01 by ldevy             #+#    #+#             */
+/*   Updated: 2023/02/14 14:15:49 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main()
+class Dog : public Animal
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-...
-return 0;
-}
+protected:
+	
+public:
+	Dog();
+	Dog(std::string type);
+	Dog(const Dog & inst);
+
+	Dog & operator=(const Dog & rhs);
+
+	void makeSound() const;
+	
+	~Dog();
+};
+
+#endif

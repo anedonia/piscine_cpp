@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:04:28 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/14 15:09:53 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/20 13:35:36 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 #include <string>
 #include <iostream>
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Bureaucrate.hpp"
 
 #endif

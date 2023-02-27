@@ -6,7 +6,7 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/02/14 15:18:09 by ldevy            ###   ########.fr        #
+#    Updated: 2023/02/15 17:15:30 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ RM		= rm -rf
 
 CC		= c++
 
-SRCS	= $(addprefix srcs/, main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp) #WrongAnimal.cpp WrongCat.cpp
+SRCS	= $(addprefix srcs/, main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp) #WrongAnimal.cpp WrongCat.cpp
 
-INC		= $(addprefix includes/, includes.hpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp) #WrongAnimal.hpp WrongCat.hpp
+INC		= $(addprefix includes/, includes.hpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp) #WrongAnimal.hpp WrongCat.hpp
 
 OBJS	= $(SRCS:%.cpp=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:35:18 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/16 18:40:47 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:19:30 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 
 	Animal & operator=(const Animal & rhs);
 
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	std::string getType() const;
 	
 	virtual ~Animal();

@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:27:26 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/21 17:35:50 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/27 14:10:32 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,20 @@ void Bureaucrate::decrement()
 		throw (Bureaucrate::GradeTooLowException());
 	else 
 		_grade++;
+}
+
+void Bureaucrate::signForm(Form & inst) const
+{
+	try
+	{
+		inst.beSigned(*this);
+		std::cout << _name + " signed " + inst.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name + " couldn't sign " + inst.getName() + " because " << e.what() << '\n';
+	}
+	
 }
 
 std::ostream & operator<<(std::ostream& o, const Bureaucrate & inst)

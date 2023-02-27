@@ -6,12 +6,14 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:55:59 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/21 17:06:59 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/24 15:24:44 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRATE_HPP
 #define BUREAUCRATE_HPP
+
+class Form;
 
 class Bureaucrate
 {
@@ -30,15 +32,20 @@ public:
 	//get
 	std::string getName() const;
 	int getGrade() const;
+	
+	//member fct
 	void increment();
 	void decrement();
+	void signForm(Form & inst) const;
+	void executeForm(Form const & form) const;
+	
 
 	class GradeTooHighException : public std::exception
 	{
 		public: 
 			virtual const char * what() const throw()
 			{
-				return ("Grade is already maxed out");
+				return ("Bureaucrate : Grade is already maxed out");
 			}
 	};
 	
@@ -47,7 +54,7 @@ public:
 		public: 
 			virtual const char * what() const throw()
 			{
-				return ("Grade is already minimal");
+				return ("Bureaucrate : Grade is already minimal");
 			}
 	};
 

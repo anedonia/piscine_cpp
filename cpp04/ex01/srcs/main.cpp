@@ -14,26 +14,44 @@
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
 
-const WrongAnimal* bad = new WrongAnimal();
-const WrongAnimal* badcat = new WrongCat();
-std::cout << bad->getType() << " " << std::endl;
-std::cout << badcat->getType() << " " << std::endl;
-bad->makeSound(); //will output the cat sound!
-badcat->makeSound();
+	Animal *tab[10];
 
-delete bad;
-delete badcat;
-delete i;
-delete j;
-delete meta;
-return 0;
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2)
+			tab[i] = new Cat();
+		else 
+			tab[i] = new Dog();
+	}
+	{
+		std::cout << std::endl;
+
+		Cat fofo;
+		Cat fifi;
+		std::cout << fifi.getBrain() << std::endl;
+		fofo = fifi;
+		std::cout << fofo.getBrain() << std::endl;
+
+		std::cout << std::endl;
+		std::cout << std::endl;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << tab[i]->getType() << std::endl;
+	}
+	std::cout << std::endl;
+
+	Cat full_obj(*(Cat *)tab[1]);
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << full_obj.getBrain()->getIdea(i) << std::endl;
+	}
+	std::cout << std::endl;
+
+	for (int i = 0; i < 10; i++)
+	{
+		delete tab[i];
+	}
+	return 0;
 }

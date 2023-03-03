@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:04:28 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/21 16:29:36 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/22 12:54:40 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 #include <string>
 #include <iostream>
 #include "Bureaucrate.hpp"
+#include "Form.hpp"
 
 #endif

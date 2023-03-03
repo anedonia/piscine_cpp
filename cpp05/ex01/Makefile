@@ -6,7 +6,7 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/02/21 17:49:12 by ldevy            ###   ########.fr        #
+#    Updated: 2023/02/23 15:47:32 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ RM		= rm -rf
 
 CXX		= c++
 
-SRCS	= main.cpp $(addprefix srcs/, Bureaucrate.cpp) #WrongAnimal.cpp WrongCat.cpp
+SRCS	= main.cpp $(addprefix srcs/, Bureaucrate.cpp Form.cpp) #WrongAnimal.cpp WrongCat.cpp
 
-INC		= $(addprefix includes/, includes.hpp Bureaucrate.hpp) #WrongAnimal.hpp WrongCat.hpp
+INC		= $(addprefix includes/, includes.hpp Bureaucrate.hpp Form.hpp) #WrongAnimal.hpp WrongCat.hpp
 
 OBJS	= $(SRCS:%.cpp=%.o)
 

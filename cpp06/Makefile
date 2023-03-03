@@ -6,37 +6,41 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/02/15 17:15:30 by ldevy            ###   ########.fr        #
+#    Updated: 2023/03/01 17:33:23 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= poly
+NAME 	= bureaucrate
 
 RM		= rm -rf
 
-CC		= c++
+CXX		= c++
 
-SRCS	= $(addprefix srcs/, main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp) #WrongAnimal.cpp WrongCat.cpp
+SRCS	= main.cpp  
 
-INC		= $(addprefix includes/, includes.hpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp) #WrongAnimal.hpp WrongCat.hpp
+INC		=  
 
 OBJS	= $(SRCS:%.cpp=%.o)
 
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 -I includes -g3
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I includes -g3
 
 all:		${NAME}
 
 ${NAME}: ${OBJS} ${INC}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME} 
-
-.cpp.o:
-	${CC} ${CFLAGS} -c $< -o $(<:.cpp=.o)
+	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME} 
 
 clean: 
 	${RM} ${OBJS}
+
 fclean: clean		
 	${RM} ${NAME}
 
 re:		fclean all
+
+test: ${NAME}
+	./bureaucrate
+
+vtest: ${NAME}
+	valgrind ./bureaucrate
 
 .PHONY: all fclean clean re 

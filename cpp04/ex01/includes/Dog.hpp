@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:13:01 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/14 14:15:49 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/16 17:49:23 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 class Dog : public Animal
 {
-protected:
+private:
+	Brain *_brain;
 	
 public:
 	Dog();

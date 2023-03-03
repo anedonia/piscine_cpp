@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:32:45 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/14 15:45:30 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/15 17:14:27 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,14 @@
 class Brain
 {
 private:
-	std::string ideas[100];
+	std::string _ideas[100];
 public:
 	Brain();
 	Brain(const Brain & inst);
 	Brain & operator=(const Brain & rhs);
 	~Brain();
+
+	std::string getIdea(int i);
 };
-
-Brain::Brain(/* args */)
-{
-}
-
-Brain::~Brain()
-{
-}
-
-
 
 #endif

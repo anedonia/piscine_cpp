@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:09:08 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/14 15:13:47 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:11:54 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	void makeSound() const;
 	std::string getType() const;
 	
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 };
 
 #endif

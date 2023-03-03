@@ -17,7 +17,7 @@ int main()
 
 	Animal *tab[10];
 
-	// Animal test();
+	// Animal test;
 	// Animal testest;
 
 	for (int i = 0; i < 10; i++)

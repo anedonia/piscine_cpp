@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 22:39:09 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/24 23:35:26 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/27 14:24:24 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Form * Intern::makeForm(const std::string name, const std::string target)
 		"jardin"
 	};
 	int i = 0;
-	while (i < 5)
+	while (i < 3)
 	{
 		if (tab[i] == name)
 			break;

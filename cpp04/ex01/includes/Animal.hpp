@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:35:18 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/14 14:12:35 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:21:37 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 class Animal
 {
 	
+private:
+	Animal();
+	
 protected:
 	std::string _type;
 	
 public:
-	Animal();
 	Animal(std::string type);
 	Animal(const Animal & inst);
 

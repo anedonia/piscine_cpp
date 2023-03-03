@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:55:59 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/23 15:45:40 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/03 14:37:27 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void increment();
 	void decrement();
 	void signForm(Form & inst) const;
+	void executeForm(Form const & form) const;
 	
 
 	class GradeTooHighException : public std::exception

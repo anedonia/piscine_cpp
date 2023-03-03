@@ -27,7 +27,7 @@ const WrongAnimal* bad = new WrongAnimal();
 const WrongAnimal* badcat = new WrongCat();
 std::cout << bad->getType() << " " << std::endl;
 std::cout << badcat->getType() << " " << std::endl;
-bad->makeSound(); //will output the cat sound!
+bad->makeSound(); 
 badcat->makeSound();
 
 delete bad;

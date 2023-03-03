@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:54:34 by ldevy             #+#    #+#             */
-/*   Updated: 2023/02/23 16:00:22 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/02/27 14:05:5 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,32 @@
 
 int main (void)
 {
+	Bureaucrate boss(1, "boss");
 	Bureaucrate louis(10, "louis");
-	Bureaucrate grunt(140, "grunt");
-	
-	std::cout << grunt << std::endl;
-	try 
-	{
-		Form contrat("contrat", 15, 10);
-		Form badcrt("wrong", 0, 100);
-		Form badcrt2("wrong", 10, 1100);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	
-	Form contrat("contrat", 15, 10);
-	std::cout << contrat << "  " << louis << std::endl;
+	Bureaucrate grunt(150, "grunt");
 
-	try
-	{
-		louis.signForm(contrat);
-		std::cout << contrat << std::endl;
-		grunt.signForm(contrat);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-		
+	Form one("one", "", 1, 150);
+	Form two("two", "", 10, 150);
+	Form three("three", "", 150, 150);
 	
+	std::cout << "|------------------------------------------------------------------|" << std::endl;
+	grunt.signForm(one);	
+	grunt.signForm(two);	
+	grunt.signForm(three);
+		
+	std::cout << "|------------------------------------------------------------------|" << std::endl;
+	louis.signForm(one);	
+	louis.signForm(two);
+	louis.signForm(three);
+
+	std::cout << "|------------------------------------------------------------------|" << std::endl;
+	boss.signForm(one);	
+	boss.signForm(two);
+	boss.signForm(three);
+
+	std::cout << one << std::endl;
+	std::cout << two << std::endl;
+	std::cout << three << std::endl;
+
 	return (0);	
 }

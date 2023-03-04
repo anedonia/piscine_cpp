@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:08:34 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/03 18:12:10 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/04 17:44:28 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 	float				_floattype;
 
 public:
-	ScalarConverter(const std::string str);
+	ScalarConverter(const std::string & str);
 	ScalarConverter(const ScalarConverter & inst);
 	
 	ScalarConverter & operator=(const ScalarConverter & inst);
@@ -39,8 +39,9 @@ public:
 	double	toDouble();
 	float	toFloat();
 	void	printConvertion();
+	void	getDataTest();
 	
-	class InvalidEntry : std::exception
+	class InvalidEntry : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()
@@ -48,7 +49,7 @@ public:
 			return ("Invalid data entry");
 		}
 	};
-	class NotPrintableValue : std::exception
+	class NotPrintableValue : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()

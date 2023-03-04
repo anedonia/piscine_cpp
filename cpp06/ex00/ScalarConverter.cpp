@@ -14,13 +14,9 @@
 #include <cmath>
 #include <limits>
 
-//comment gérer les nan inf etc ? directement par parsing ou je laisse les cast se faire avec les valeurs inf etc ?
-//les nan et inf sont géré par strtof/d
-//il faut une classe ScalarConverter
-//et une methode convert prend en param la representation str 
-ScalarConverter::ScalarConverter(std::string str): _str(str)
+ScalarConverter::ScalarConverter(const std::string &str): _str(str)
 {
-	convert(_str);
+
 }
 
 ScalarConverter::~ScalarConverter()
@@ -31,17 +27,17 @@ void ScalarConverter::convert(std::string str)
 {
 	if (str.empty())
 		throw InvalidEntry();
-	else if (str.length() == 1)
+	if (str.length() == 1)
 	{
 		if (isdigit(str.c_str()[0]))
 		{
-			_inttype = static_cast<int>(strtol(str.c_str(), NULL, 10));
-			_type = _int;
+			this->_inttype = static_cast<int>(strtol(str.c_str(), NULL, 10));
+			this->_type = _int;
 		}
 		else
 		{
-			_chartype = str.c_str()[0];
-			_type = _char;
+			this->_chartype = str.c_str()[0];
+			this->_type = _char;
 		}
 	}
 	else
@@ -52,15 +48,20 @@ void ScalarConverter::convert(std::string str)
 		double nb_double = strtod(str.c_str(), &endPtrdouble);
 		if (*endPtrlong)
 		{
-			if (*endPtrdouble == 'f')
+			if (*endPtrdouble)
 			{
-				_type = _float;
-				_floattype = static_cast<float>(nb_double);
+				if (*endPtrdouble == 'f')
+				{
+					this->_type = _float;
+					_floattype = static_cast<float>(nb_double);
+				}
+				else
+					throw InvalidEntry();
 			}
-			else 
+			else
 			{
-				_type = _double;
-				_floattype = static_cast<double>(nb_double);
+				this->_type = _double;
+				this->_doubletype = nb_double;
 			}
 		}
 		else 
@@ -69,8 +70,8 @@ void ScalarConverter::convert(std::string str)
 				throw InvalidEntry();
 			else
 			{
-				_type = _int;
-				_inttype = static_cast<int>(nb_long);
+				this->_type = _int;
+				this->_inttype = static_cast<int>(nb_long);
 			}
 		}
 	} 
@@ -131,9 +132,9 @@ char ScalarConverter::toChar()
 			tmp = _chartype;
 		break;
 	}
-	if (!isprint(tmp)) //a ete changé
-		throw NotPrintableValue();
-	else 
+	// if (!isprint(tmp)) 
+		// throw NotPrintableValue();
+	// else 
 		return (tmp);
 }
 
@@ -206,9 +207,10 @@ void ScalarConverter::printConvertion()
 {
 	try
 	{
+		char c;
 		std::cout << "char : ";
-		_chartype = toChar();
-		std::cout << _chartype << std::endl;
+		c = this->toChar();
+		std::cout << "'" << c << "'" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -244,4 +246,9 @@ void ScalarConverter::printConvertion()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+}
+
+void	ScalarConverter::getDataTest()
+{
+	std::cout << _type + "   " << _doubletype << " : " + _str << std::endl;
 }

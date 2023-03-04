@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:05:43 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/03 21:02:54 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/04 17:40:49 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,13 @@ int main(int argc, char **argv)
 	std::string str = argv[1];
 	
 	ScalarConverter nb(str);
+	try
+	{
+		nb.convert(str);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	nb.printConvertion();
 }

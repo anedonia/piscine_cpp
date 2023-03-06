@@ -6,7 +6,7 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/03/06 20:17:10 by ldevy            ###   ########.fr        #
+#    Updated: 2023/03/06 22:12:51 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ RM		= rm -rf
 
 CXX		= c++
 
-SRCS	= main.cpp Data.cpp serialize.cpp
+SRCS	= main.cpp Data.cpp Serialize.cpp
 
-INC		=  Data.hpp
+INC		=  Data.hpp Serialize.hpp
 
 OBJS	= $(SRCS:%.cpp=%.o)
 

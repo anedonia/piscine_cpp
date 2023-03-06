@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:05:43 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/04 17:40:49 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/06 18:11:31 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+		return (0);
 	}
 	nb.printConvertion();
 }

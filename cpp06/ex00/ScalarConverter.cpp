@@ -13,6 +13,7 @@
 #include "ScalarConverter.hpp"
 #include <cmath>
 #include <limits>
+#include <iomanip>
 
 ScalarConverter::ScalarConverter(const std::string &str): _str(str)
 {
@@ -48,6 +49,8 @@ void ScalarConverter::convert(std::string str)
 		double nb_double = strtod(str.c_str(), &endPtrdouble);
 		if (*endPtrlong)
 		{
+			if ( nb_double == 0 && nb_long == 0 && str.find(".") == std::string::npos)
+				throw InvalidEntry();
 			if (*endPtrdouble)
 			{
 				if (*endPtrdouble == 'f')
@@ -112,18 +115,18 @@ char ScalarConverter::toChar()
 	{
 		case _int:
 			if (_inttype > std::numeric_limits<char>::max() || _inttype < std::numeric_limits<char>::min())
-				throw NotPrintableValue();
+				throw NotPrintableValueChar();
 			else
 				tmp = static_cast<char>(_inttype);
 		break;
 		case _float:
-			if ( std::isnan(_floattype) || _floattype > std::numeric_limits<char>::max() || _floattype < std::numeric_limits<char>::min())
+			if (std::isinf(_floattype) || std::isnan(_floattype) || _floattype > std::numeric_limits<char>::max() || _floattype < std::numeric_limits<char>::min())
 				throw NotPrintableValue();
 			else
 				tmp = static_cast<char>(_floattype);
 		break;
 		case _double:
-			if ( std::isnan(_doubletype) || _doubletype > std::numeric_limits<char>::max() || _doubletype < std::numeric_limits<char>::min())
+			if (std::isinf(_doubletype) || std::isnan(_doubletype) || _doubletype > std::numeric_limits<char>::max() || _doubletype < std::numeric_limits<char>::min())
 				throw NotPrintableValue();
 			else
 				tmp = static_cast<char>(_doubletype);
@@ -132,9 +135,9 @@ char ScalarConverter::toChar()
 			tmp = _chartype;
 		break;
 	}
-	// if (!isprint(tmp)) 
-		// throw NotPrintableValue();
-	// else 
+	if (!isprint(tmp)) 
+		throw NotPrintableValueChar();
+	else 
 		return (tmp);
 }
 
@@ -146,13 +149,13 @@ int ScalarConverter::toInt()
 			return _inttype;
 		break;
 		case _float:
-			if (std::isnan(_floattype) || _floattype > std::numeric_limits<int>::max() || _floattype < std::numeric_limits<int>::min())
+			if (std::isinf(_floattype) || std::isnan(_floattype) || _floattype > std::numeric_limits<int>::max() || _floattype < std::numeric_limits<int>::min())
 				throw NotPrintableValue();
 			else 
 				return static_cast<int>(_floattype);
 		break;
 		case _double:
-			if (std::isnan(_floattype) || _floattype > std::numeric_limits<int>::max() || _floattype < std::numeric_limits<int>::min())
+			if (std::isinf(_doubletype) || std::isnan(_doubletype) || _doubletype > std::numeric_limits<int>::max() || _doubletype < std::numeric_limits<int>::min())
 				throw NotPrintableValue();
 			else	
 				return static_cast<int>(_doubletype);
@@ -230,7 +233,10 @@ void ScalarConverter::printConvertion()
 	{
 		std::cout << "float : ";
 		_floattype = toFloat();
-		std::cout << _floattype << "f" << std::endl;
+		if (ceilf(_floattype) == _floattype)
+			std::cout << std::fixed << std::setprecision(1) << _floattype << "f" << std::endl;
+		else 
+			std::cout << _floattype << "f" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -240,7 +246,10 @@ void ScalarConverter::printConvertion()
 	{
 		std::cout << "double : ";
 		_doubletype = toDouble();
-		std::cout << _doubletype << std::endl;
+		if (ceil(_doubletype) == _doubletype)
+			std::cout << std::fixed << std::setprecision(1) << _doubletype << std::endl;
+		else 
+			std::cout << _doubletype << std::endl;
 	}
 	catch(const std::exception& e)
 	{

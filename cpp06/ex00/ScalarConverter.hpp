@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:08:34 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/04 17:44:28 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/06 18:36:20 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,14 @@ public:
 		virtual const char *what() const throw()
 		{
 			return ("Impossible");
+		}
+	};
+	class NotPrintableValueChar : public std::exception
+	{
+	public:
+		virtual const char *what() const throw()
+		{
+			return ("Non displayable");
 		}
 	};
 };

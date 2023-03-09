@@ -50,8 +50,9 @@ void identify(Base& p)
 {
 	try
 	{
-		dynamic_cast<A&>(p);
+		A tmp  = dynamic_cast<A&>(p);
 		std::cout << "class de type A (ref)" << std::endl;
+		(void)tmp;
 	}
 	catch(const std::exception& e)
 	{
@@ -59,8 +60,9 @@ void identify(Base& p)
 	}
 	try
 	{
-		dynamic_cast<B&>(p);
+		B tmp = dynamic_cast<B&>(p);
 		std::cout << "class de type B (ref)" << std::endl;
+		(void)tmp;
 	}
 	catch(const std::exception& e)
 	{
@@ -68,8 +70,9 @@ void identify(Base& p)
 	}
 	try
 	{
-		dynamic_cast<C&>(p);
+		C tmp = dynamic_cast<C&>(p);
 		std::cout << "class de type C (ref)" << std::endl;
+		(void)tmp;
 	}
 	catch(const std::exception& e)
 	{

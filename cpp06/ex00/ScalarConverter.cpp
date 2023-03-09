@@ -259,5 +259,5 @@ void ScalarConverter::printConvertion()
 
 void	ScalarConverter::getDataTest()
 {
-	std::cout << _type + "   " << _doubletype << " : " + _str << std::endl;
+	std::cout << _type << "   " << _doubletype << " : " + _str << std::endl;
 }

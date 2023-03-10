@@ -6,11 +6,11 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/03/10 20:08:14 by ldevy            ###   ########.fr        #
+#    Updated: 2023/03/10 21:22:17 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= template 
+NAME 	= container 
 
 RM		= rm -rf
 
@@ -18,7 +18,7 @@ CXX		= c++
 
 SRCS	= main.cpp
 
-INC		=  iter.hpp
+INC		=  easyfind.hpp
 
 OBJS	= $(SRCS:%.cpp=%.o)
 

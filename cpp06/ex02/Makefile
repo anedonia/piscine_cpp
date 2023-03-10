@@ -6,7 +6,7 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 17:34:16 by ldevy             #+#    #+#              #
-#    Updated: 2023/03/06 21:52:24 by ldevy            ###   ########.fr        #
+#    Updated: 2023/03/10 20:02:56 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 	= base
 
 RM		= rm -rf
 
-CXX		= c++
+CXX		= clang++
 
 SRCS	= main.cpp Base.cpp
 

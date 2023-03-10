@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:44:55 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/06 21:52:05 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/10 20:04:33 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void identify(Base& p)
 {
 	try
 	{
-		A tmp  = dynamic_cast<A&>(p);
+		A tmp = dynamic_cast<A&>(p);
 		std::cout << "class de type A (ref)" << std::endl;
 		(void)tmp;
 	}

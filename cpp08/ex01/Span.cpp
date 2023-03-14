@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:02:58 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/13 18:13:09 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/14 12:12:48 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,26 @@ void Span::addNumber (int i)
 
 int	Span::shortestSpan() const
 {
+	if (_vec.size() < 2)
+		throw VectorTooFewElements();
+	
+	std::vector<int> tmp = _vec;
+	int ret;
+
+	std::sort(tmp.begin(), tmp.end());
+	
+	for (size_t i = 1; i < tmp.size(); i++) 
+	{ 
+		if(i == 1 || tmp[i] - tmp[i - 1] < ret) 
+			ret = tmp[i] - tmp[ i - 1]; 
+	}
+	return (ret);
+}
+
+int	Span::longestSpan () const
+{
+	if (_vec.size() < 2)
+		throw VectorTooFewElements();
 	std::vector<int> tmp = _vec;
 	std::vector<int>::iterator max;
 	std::vector<int>::iterator min;
@@ -59,7 +79,3 @@ int	Span::shortestSpan() const
 	return std::abs(*max - *min);
 }
 
-int	Span::longestSpan () const
-{
-	
-}

@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:59:15 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/13 13:27:55 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/14 12:44:42 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 	void addNumber(int i);
 	int	shortestSpan() const;
 	int longestSpan() const;
+	std::vector<int> getVec() const;
+	unsigned int size() const;
 
 	class VectorFull : public std::exception
 	{
@@ -51,7 +53,7 @@ public:
 	};
 };
 
-
+std::ostream & operator<<(std::ostream & o, const Span & inst);
 
 
 #endif

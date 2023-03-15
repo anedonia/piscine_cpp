@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:02:58 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/14 12:12:48 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/14 12:45:24 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,26 @@ int	Span::longestSpan () const
 	min = std::min_element(tmp.begin(), tmp.end());
 	
 	return std::abs(*max - *min);
+}
+
+std::vector<int> Span::getVec() const
+{
+	return _vec;
+}
+
+unsigned int Span::size() const
+{
+	return _size;
+}
+
+std::ostream & operator<<(std::ostream & o, const Span & inst)
+{
+	std::vector<int> tmp = inst.getVec();
+	for (unsigned int i = 0; i < inst.size(); i++)
+	{
+		o << tmp[i];
+		o << " - ";
+	}
+	return o;
 }
 

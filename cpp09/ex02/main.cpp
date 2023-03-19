@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 17:08:56 by ldevy             #+#    #+#             */
-/*   Updated: 2023/03/19 18:32:53 by ldevy            ###   ########.fr       */
+/*   Updated: 2023/03/19 18:40:23 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ int main(int ac, char **av)
  		long microseconds = end.tv_usec - begin.tv_usec;
   		double elaps = (seconds + microseconds)*1e-6;
 
-		std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << std::setprecision(7) << elaps << "µs" << std::endl;
+		std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << std::fixed << std::setprecision(7) << elaps << "µs" << std::endl;
 	}	
 	
 	//-----------------------------------------------------------------------//
@@ -153,7 +153,7 @@ int main(int ac, char **av)
   		double elaps = (seconds + microseconds)*1e-6;
 
 
-		std::cout << "Time to process a range of " << deq.size() << " elements with std::deque : " << std::setprecision(7) << elaps << "µs" << std::endl;
+		std::cout << "Time to process a range of " << deq.size() << " elements with std::deque :  " << std::fixed << std::setprecision(7) << elaps << "µs" << std::endl;
 	}
 
     return 0;

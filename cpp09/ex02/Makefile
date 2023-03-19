@@ -4,7 +4,7 @@ INC = PmergeMe.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++
+CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 #sort test with -std=c++17
